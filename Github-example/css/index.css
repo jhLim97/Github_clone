@@ -16,3 +16,17 @@ img{
 .panel-heading{
     text-align: center;
 }
+.sign-bottom{
+    border: 1.5px solid #e5e5e5;
+    border-radius: 10px;
+    padding: 22px 30px;
+    text-align: center;
+    font-size: 17px;
+}
+.sign-footer{
+    display: flex;
+}
+.sign-footer > div{
+    font-size: 20px;
+    margin: 100px auto 0 auto;
+}
