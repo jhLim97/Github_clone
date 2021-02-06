@@ -19,6 +19,10 @@ var flash = require('connect-flash');
 // 서버 객체
 var app = express(); 
 
+// 뷰 관련 설정
+app.set('views', __dirname + '/views');
+app.set('view engine', 'ejs');
+
 // port 번호 설정
 app.set('port', process.env.PORT || config.server_port);
 
@@ -49,4 +53,6 @@ app.use(errorHandler);
 
 var server = http.createServer(app).listen(app.get('port'), function() {    
     console.log('익스프레스로 웹 서버를 실행함 : ' + app.get('port'));
+    
+    database_loader.init(app, config);
 });
