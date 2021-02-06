@@ -32,12 +32,14 @@
                 Sign in
             </div>
             <div class="panel-body">
-                <input type="text" class="form-control" placeholder="Username or email address">
-                <br />
-                <input type="text" class="form-control" placeholder="Password">
-                <br />
-                <button class="btn btn-lg btn-success btn-block">Sign in</button>
-                <br />     
+                <form method="post" action="/login">
+                    <input type="text" class="form-control" placeholder="Username or email address">
+                    <br />
+                    <input type="text" class="form-control" placeholder="Password">
+                    <br />
+                    <button class="btn btn-lg btn-success btn-block">Sign in</button>
+                    <br />  
+                </form>
             </div>
         </div>
         <div class="sign-bottom">
