@@ -6,11 +6,14 @@ var path = require('path');
 
 var bodyParser = require('body-parser');
 var cookieParser = require('cookie-parser');
-var expression = require('express-session');
+var expressSession = require('express-session');
 
 var expressErroHandler = require('express-error-handler');
 
 var config = require('./config/config');
+
+var database_loader = require('./database/database_loader');
+var route_loader = require('./routes/route_loader');
 
 //===== Passport 사용 =====//
 var passport = require('passport');
@@ -39,6 +42,24 @@ app.use(expressSession({
     resave:true,
     saveUninitialized:true
 }));
+
+
+//===== Passport 초기화 및 로그인 세션유지 =====//
+app.use(passport.initialize());
+app.use(passport.session());
+app.use(flash());
+
+//route_loader.init(app, express.Router());
+var router = express.Router();
+//route_loader.init(app, router);
+
+// passport 설정
+var configPassport = require('./config/passport');
+configPassport(app, passport);
+
+// passport 관련 함수 라우팅
+var userPassport = require('./routes/user_passport');
+userPassport(app, passport);
 
 
 // 등록된 라우터 패스가 없는 경우
