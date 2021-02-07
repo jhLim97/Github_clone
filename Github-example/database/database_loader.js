@@ -12,7 +12,7 @@ function connect(app, config) {
     console.log('connect 호출됨.');
     
     mongoose.Promise = global.Promise;
-    mongoose.connect(config.db_url);
+    mongoose.connect(config.db_url, { useNewUrlParser: true, useUnifiedTopology: true });
     database.db = mongoose.connection;
     
     database.db.on('open', function() {

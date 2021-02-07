@@ -6,6 +6,8 @@ var Schema = {};
 
 Schema.createSchema = function(mongoose) {
     console.log('createSchema 호출됨.');
+    
+    mongoose.set('useCreateIndex', true)
     var UserSchema = mongoose.Schema({
         email: {type:String, 'default':''},
         hashed_password: {type:String, requied:true, 'default':''},
