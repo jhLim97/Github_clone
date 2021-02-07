@@ -33,9 +33,9 @@
             </div>
             <div class="panel-body">
                 <form method="post" action="/signin">
-                    <input type="text" class="form-control" placeholder="Username or email address">
+                    <input type="text" class="form-control" placeholder="Email address" name="email">
                     <br />
-                    <input type="text" class="form-control" placeholder="Password">
+                    <input type="text" class="form-control" placeholder="Password" name="password">
                     <br />
                     <button class="btn btn-lg btn-success btn-block">Sign in</button>
                     <br />  
@@ -44,7 +44,7 @@
         </div>
         <div class="sign-bottom">
             New to GitHub?
-            <a href="#">Create an account.</a>
+            <a href="/signup">Create an account.</a>
         </div>
         <div class="sign-footer">
             <div><a href="#">Terms</a></div>

@@ -9,7 +9,7 @@ module.exports = new LocalStrategy({
     console.log('passport의 local-login 호출됨 : ' + email + ', ' + password);
     
     // 우리는 몽고디비를 사용(관계형 DB를 사용하는 경우 SQL 문으로 비교)
-    var database = app.get('database'); 
+    var database = req.app.get('database'); 
     database.UserModel.findOne({'email':email}, function(err, user) {
         if(err) {
             console.log('에러 발생함');

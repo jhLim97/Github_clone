@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Join GitHub · GitHub</title>
+
+    <link rel="icon" href="favicon.png"> <!-- 익스플로러 외 다른 브라우저에서 사용할 아이콘 -->
+    <link rel="apple-touch-icon" href="favicon.png"> <!-- 스마트폰에서 사용할 아이콘 -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.css">
+
+    <!-- 아이콘 -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/signup.css">
+</head>
+<body>
+    <header>
+        <div class="signup-menu">
+            <div class="signup-logo">
+                <a href="https://github.com/"><img src="favicon.png" alt="파비콘"></a>
+            </div>
+            <div class="menu-content">
+                <ul>
+                    <li><a href="#">Why&nbsp;GitHub?</a></li>
+                    <li><a href="#">Team</a></li>
+                    <li><a href="#">Enterprise</a></li>
+                    <li><a href="#">Explore</a></li>
+                    <li><a href="#">Marketplace</a></li>
+                    <li><a href="#">Pricing</a></li>
+                </ul>
+            </div>
+            <form action="#"><input class="menu-input" type="text" placeholder="Search GitHub"></form>
+            <div class="menu-signin">
+                <a href="signin.html">Sign&nbsp;in</a>
+            </div>
+        </div>
+    </header>
+
+    <div class="wrap-body">
+
+        <div class="up-content">
+            <div class="join">Join GitHub</div>
+            <div class="create">Create your account</div>
+        </div>
+
+        <form  id="sign-form" method="POST" action="/signup">
+            <ul>
+                Username
+                <li><input type="text" class="input--text" name="name"></li>
+                Email address
+                <li><input type="email" class="input--text" name="email"></li>
+                Password
+                <li>
+                    <input type="password" class="input--text" name="password">
+                    <p class="caption">Make sure it's at least 15 characters OR at least 8 characters including a number and a lowercase letter. 
+                        <a herf="#">Learn more.</a></p>
+                </li>
+            </ul>
+
+            <div class="em">
+                Email preferences
+            </div>
+            <input type="checkbox" id="ch">
+            Send me occasional product updates, announcements, and offers.
+
+            <div class="ver">
+                Verify your account
+            </div>
+
+            <div class="ver-box">
+                <div class="ver-box-content">이 퍼즐을 풀어서 귀하가 인간이라는 것을 알 수 있게 해주십시오</div>
+                <button>확인</button>
+            </div>
+
+            <div class="button">
+                <button type="submit">Create account</button>
+            </div>
+        </form>
+        <div class="button-content">
+            By creating an account, you agree to the <a href="#">Terms of Service</a>. For more information about GitHub's privacy practices, see the <a href="#">GitHub Privacy Statement</a>. We'll occasionally send you account-related emails.
+        </div>
+
+    </div>
+
+    <footer class="footer clearfix">
+        <div class="git-logo float--left"><a href="https://github.com/">GitHub</a></div>
+        <div class="float--right">
+            <ul>
+                <li>Product</li>
+                <li><a href="#">Features</a></li>
+                <li><a href="#">Security</a></li>
+                <li><a href="#">Team</a></li>
+                <li><a href="#">Enterprise</a></li>
+                <li><a href="#">Customer stories</a></li>
+                <li><a href="#">The ReadME Project</a></li>
+                <li><a href="#">Pricing</a></li>
+                <li><a href="#">Resources</a></li>
+                <li><a href="#">Roadmap</a></li>
+            </ul>
+            <ul>
+                <li>Platform</li>
+                <li><a href="#">Developer API</a></li>
+                <li><a href="#">Partners</a></li>
+                <li><a href="#">Atom</a></li>
+                <li><a href="#">Electron</a></li>
+                <li><a href="#">GitHub Desktop</a></li>
+            </ul>
+            <ul>
+                <li>Support</li>
+                <li><a href="#">Docs</a></li>
+                <li><a href="#">Community Forum</a></li>
+                <li><a href="#">Professional Services</a></li>
+                <li><a href="#">Learning Lab</a></li>
+                <li><a href="#">Status</a></li>
+                <li><a href="#">Contact GitHub</a></li>
+            </ul>
+            <ul>
+                <li>Company</li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Blog</a></li>
+                <li><a href="#">Careers</a></li>
+                <li><a href="#">Press</a></li>
+                <li><a href="#">Social Impact</a></li>
+                <li><a href="#">Shop</a></li>
+            </ul>
+        </div>
+    </footer>
+
+    <div class="footer-info clearfix">
+        <div class="info float--left">
+            <ul>
+                <li>© 2021 GitHub, Inc.</li>
+                <li><a href="#">Terms</a></li>
+                <li><a href="#">Privacy</a></li>
+                <li><a href="#">Site Map</a></li>
+                <li><a href="#">What is Git?</a></li>
+            </ul>
+        </div>
+
+        <div class="info-logo float--right">
+            <a href="https://twitter.com/github"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+            <a href="https://www.facebook.com/GitHub"><i class="fa fa-facebook-official" aria-hidden="true"></i></a>
+            <a href="https://www.youtube.com/github"><i class="fa fa-youtube-play" aria-hidden="true"></i></a>
+            <a href="https://www.linkedin.com/company/github"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+            <a href="https://github.com/github"><i class="fa fa-github" aria-hidden="true"></i></a>
+        </div>
+    </div>
+</body>
+</html>
