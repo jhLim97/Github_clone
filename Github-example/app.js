@@ -22,6 +22,7 @@ var flash = require('connect-flash');
 // 서버 객체
 var app = express(); 
 
+
 // 뷰 관련 설정
 app.set('views', __dirname + '/views');
 app.set('view engine', 'ejs');
@@ -49,9 +50,9 @@ app.use(passport.initialize());
 app.use(passport.session());
 app.use(flash());
 
-//route_loader.init(app, express.Router());
+
 var router = express.Router();
-//route_loader.init(app, router);
+route_loader.init(app, router);
 
 // passport 설정
 var configPassport = require('./config/passport');
@@ -61,6 +62,7 @@ configPassport(app, passport);
 var userPassport = require('./routes/user_passport');
 userPassport(app, passport);
 
+//app.use('/', router);
 
 // 등록된 라우터 패스가 없는 경우
 var errorHandler = expressErroHandler({

@@ -19,8 +19,22 @@ module.exports = function(router, passport) { // router는 app 객체를 인자�
     });
 
     router.route('/signin').post(passport.authenticate('local-login', {
-        successRedirect: '/profile',
+        //successRedirect: '/profile',        
+        successRedirect: '/',
         failureRedirect: '/signin',
+        failureFlash: true
+    }));
+    
+    router.route('/signup').get(function(req, res) {
+        console.log('/signup 패스로 GET 요청됨.');
+
+        res.render('signup.ejs', {message: req.flash('signupMessage')});
+    });
+
+    router.route('/signup').post(passport.authenticate('local-signup', {
+        //successRedirect: '/profile',
+        successRedirect: '/',
+        failureRedirect: '/signup',
         failureFlash: true
     }));
 
