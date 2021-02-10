@@ -1,0 +1,237 @@
+.section{
+    height: 70px;
+    background-color: rgba(0, 0, 0, 0.842);
+}
+.section .nav{
+    margin: 0 auto;
+}
+.section .left-section{
+    display: flex;
+}
+.logo img{
+    width: 35px;
+    height: auto;
+    margin: 18px 20px 18px 35px;
+}
+.left-input{
+    padding-top: 18px;
+    margin-right: 10px;
+}
+.left-input input{
+    outline-style: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    width: 300px;
+    border: 1px solid rgba(255, 255, 255, 0.151);
+    background-color: rgba(27, 27, 29, 0.4);
+    color: #fff;
+}
+.left-input input:focus{
+    width: 600px;
+    background-color: #fff;
+    color: black;
+    transition-duration: 1s;
+}
+.section .left-section ul{
+    display: flex;
+}
+.section .left-section ul li a{
+    color: #fff;
+    padding: 25px 10px;
+    display: flex;
+}
+.section .left-section ul li a:hover{
+    text-decoration: none;
+    color: #565b5f;
+}
+.right-section .fa{
+    color:#fff;
+}
+.right-section a{
+    padding: 25px 12px;
+}
+.right-section a:last-child{
+    margin-right: 15px;
+}
+.right-section a:hover .fa{
+    color: #565b5f;
+}
+/* FLOAT CLEARFIX */
+.clearfix::after{
+    content: "";
+    clear: both;
+    display: block;
+} /*자식요소에 float속성을 쓰면 부모요소에 clearfix를 사용해야함*/
+.float--left{
+    float: left;
+}
+.float--right{
+    float: right;
+    display:flex;
+}
+.main-nav{
+    border-bottom: 1px solid rgb(161, 161, 161);
+    margin-top: 70px;
+}
+.main-nav ul{
+    display: flex;
+    justify-content: center;
+}
+.main-nav ul li{
+
+}
+.main-nav ul li a{
+    color: rgba(24, 24, 24, 0.938);
+    padding: 18px;
+    display: flex;
+}
+.main-nav ul li a:hover{
+    text-decoration: none;
+    color: #0d0d0e;
+    font-weight: bold;
+}
+.main-nav ul li i{
+    margin-right: 7px;
+    color:rgb(129, 129, 129);
+}
+.content{
+    display: flex;
+    
+}
+.content .center-content{
+    margin: 0 auto;
+    display: flex;
+    border-bottom: 1px solid rgb(216, 216, 216);
+}
+.content .left-content{
+    margin-right: 40px;
+}
+.profile{
+    width: 280px;
+    height: 280px;
+    border: 1px solid rgb(196, 196, 196);
+    border-radius: 100%;
+    margin-top: 15px;
+}
+.button{
+    margin-top: 50px;
+    margin-bottom: 20px;
+}
+.button button{
+    padding: 8px 100px;
+    border-radius: 8px;
+    font-weight: bold;
+    font-size: 14px;
+    outline-style: none;
+    background-color: rgba(245, 245, 245, .8);
+    border: 1px solid rgb(204, 204, 204);
+}
+.button button:hover{
+    background-color: rgba(233, 233, 233, 0.6);
+}
+.content .left-content ul{
+    display: flex;
+}
+.content .left-content ul li{
+    margin-right: 5px;
+}
+.content .left-content ul i{
+    margin-right: 5px;
+}
+.content .left-content ul li a{
+    color: rgb(36, 36, 36);
+    font-weight: 200;
+}
+.content .left-content ul li a:hover{
+    text-decoration: none;
+    color: rgb(72, 137, 223);
+}
+.right-content{
+    /* display: flex; */
+    margin-top: 20px;
+}
+.up{
+    display: flex;
+}
+.down{
+    margin-top: 18px;
+}
+.down .d1{
+    border-top: 1px solid rgb(216, 216, 216);
+    height: 150px;
+}
+.down .d2{
+    border-top: 1px solid rgb(216, 216, 216);
+    height: 150px;
+}
+.down .d3{
+    border-top: 1px solid rgb(216, 216, 216);
+    border-bottom: 1px solid rgb(216, 216, 216);
+    height: 150px;
+    margin-bottom: 60px;
+}
+.right-content .rc-input input{
+    outline-style: none;
+    padding: 9px 400px 9px 13px;
+    border-radius: 5px;
+    border: 1px solid rgba(212, 212, 212, 0.7);
+    font-size: 14px;
+    margin-right: 18px;
+}
+.right-content .rc-input input:focus{
+    background-color: #ffffff;
+    border: 1px solid rgb(0, 110, 255);
+    box-shadow: 0 0 8px rgb(55, 141, 253);
+}
+.right-content .rc-b1{
+    margin-right: 10px;
+}
+.right-content .rc-b2{
+    margin-right: 20px;
+}
+.content .right-content button{
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 14px;
+    outline-style: none;
+    background-color: rgba(245, 245, 245, .8);
+    border: 1px solid rgb(204, 204, 204);
+    font-weight: bold;
+    font-size: 300;
+}
+.content .right-content button:hover{
+    background-color: rgba(233, 233, 233, 0.6);
+}
+.right-content .rc-b3 button{
+   background-color: rgb(6, 163, 6);
+   color: #fff;
+   border: 1px solid rgb(5, 134, 5);
+}
+.right-content .rc-b3 button:hover{
+    background-color: rgb(5, 134, 5);
+}
+.right-content .rc-b3 i{
+    margin-right: 5px;
+}
+footer{
+    margin-top: 20px;
+}
+footer .foot-center{
+    margin: 0 200px;
+}
+footer ul{
+    display: flex;
+}
+footer ul li{
+    margin: 40px auto;
+}
+footer ul li:nth-child(7){
+    background: url("../img/logo.svg");
+    width: 32px;
+    height: 32px;
+    display: block;
+    text-indent: -9999px;
+}
+footer ul li:nth-child(7):hover{
+    background: url("../img/logo_on.svg");
+}
