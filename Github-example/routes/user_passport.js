@@ -11,6 +11,11 @@ module.exports = function(router, passport) { // router는 app 객체를 인자�
         res.render('index.ejs');
     });
 
+    router.route('/repository').get(function(req, res) {
+        console.log('/repository 패스로 GET 요청됨.');
+        
+        res.render('repository.ejs');
+    });
     
     router.route('/signin').get(function(req, res) {
         console.log('/signin 패스로 GET 요청됨.');

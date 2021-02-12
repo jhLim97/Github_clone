@@ -8,6 +8,9 @@ var bodyParser = require('body-parser');
 var cookieParser = require('cookie-parser');
 var expressSession = require('express-session');
 
+
+var cors = require('cors');
+
 var expressErroHandler = require('express-error-handler');
 
 var config = require('./config/config');
@@ -44,6 +47,7 @@ app.use(expressSession({
     saveUninitialized:true
 }));
 
+app.use(cors());
 
 //===== Passport 초기화 및 로그인 세션유지 =====//
 app.use(passport.initialize());
@@ -62,7 +66,9 @@ configPassport(app, passport);
 var userPassport = require('./routes/user_passport');
 userPassport(app, passport);
 
-//app.use('/', router);
+// 파일 업로드 관현 함수 라우팅
+var uploadFile = require('./routes/file');
+uploadFile(app);
 
 // 등록된 라우터 패스가 없는 경우
 var errorHandler = expressErroHandler({
