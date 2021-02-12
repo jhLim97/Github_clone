@@ -4,6 +4,5 @@ module.exports = {
     db_schemas: [
         {file:'./user_schema', collection:'users5', schemaName:'UserSchema', modelName:'UserModel'}
     ],
-    route_info: [    
-    ]
+    route_info: []
 };
