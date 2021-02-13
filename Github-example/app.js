@@ -35,11 +35,13 @@ app.set('port', process.env.PORT || config.server_port);
 
 // get 방식
 app.use('/public', static(path.join(__dirname, 'public')));
+app.use('/uploads', static(path.join(__dirname, 'uploads')));
 
 // post 방식
 app.use(bodyParser.urlencoded({extended:false})); 
 app.use(bodyParser.json()); 
 
+// 세션 추가
 app.use(cookieParser());
 app.use(expressSession({
     secret:'my key',
