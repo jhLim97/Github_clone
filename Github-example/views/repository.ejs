@@ -91,11 +91,14 @@
                     for(var i =0 ; i<results[0]._doc.upload_files.length; i++) {
                         var curFileName = results[0]._doc.upload_files[i].name;
                         var curUpdated_at = results[0]._doc.upload_files[i].updated_at;
+                        var url = "/uploads/" + curFileName;
                     %>
                     <div class="d1">
-                        <br><br>
+                        <br><br><br>
+                        <a href="<%=url%>">
                         #<%= i+1 %> - 파일명 : <%=curFileName %>
-                        <br><br>
+                        </a>
+                        <br><br><br>
                         updated_at : <%=curUpdated_at %>
                     </div>
                     <%
