@@ -58,12 +58,65 @@ module.exports = function(router) {
                 size = files[i].size;
             }
         }
+        
+        var database = req.app.get('database');
+        var email = req.session.user.email;
+        addFile(database, email, filename, function(err, result){
+            if(err) {
+               console.log('에러 발생.');
+               res.writeHead(200, {"Content-Type":"text/html;charset=utf8"});
+               res.write('<h1>에러 발생</h1>');
+               res.end();
+               return;
+           } 
+            
+            if(result) {
+                console.dir(result);
+                res.redirect('/repository');
+            } else {
+                console.log('에러 발생.');
+                res.writeHead(200, {"Content-Type":"text/html;charset=utf8"});
+                res.write('<h1>파일 추가 안됨.</h1>');
+                res.end();
+            }
+        });
 
+        /*
         res.writeHead(200, {"Content-Type":"text/html;charset=utf8"});
         res.write("<h1>파일 업로드 성공</h1>");
         res.write("<p>원본파일 : " + originalname + "</p>");
         res.write("<p>저장파일 : " + filename + "</p>");
-        res.end();
+        res.end();*/
     
     });
 }
+
+var addFile = function(db, email, fileName, callback) {
+    console.log('addFile 호출됨 : ' + email + '->'+ fileName);
+    
+    db.UserModel.findByEmail(email, function(err, results) {
+        if(err) {
+            callback(err, null);
+            return;
+        }
+        
+        console.log('이메일 %s로 검색됨.', email);
+        if(results.length > 0) {
+            objectFile = {
+                name:fileName,
+                updated_at:Date.now()
+            };
+            // 나중에 findByIdUpdate로 수정하기
+            db.UserModel.update({email:email}, {$push : {upload_files:objectFile}}, function(err){
+                if(err) {
+                    console.log(err);
+                }
+            });
+            callback(null, results);
+        } else {
+            console.log('이메일 일치하는 사용자 없음.');
+            callback(null, null);
+        }
+    })
+    
+};

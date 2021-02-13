@@ -13,6 +13,9 @@ Schema.createSchema = function(mongoose) {
         hashed_password: {type:String, requied:true, 'default':''},
         salt: {type:String, required:true},
         name: {type:String, index:'hashed', 'default':''},
+        upload_files:[{name:{type:String, 'default':''},
+                       updated_at:{type:Date, index:{unique:false},'default':Date.now()}
+                      }],
         created_at: {type:Date, index:{unique:false},'default':Date.now()},
         updated_at: {type:Date, index:{unique:false},'default':Date.now()}
     });

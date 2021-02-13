@@ -27,6 +27,15 @@ module.exports = new LocalStrategy({
             return done(null, false, req.flash('loginMessage', '비밀번호가 일치하지 않습니다.'));
         }
             
+        if (req.session.user) {
+            console.log('이미 로그인 되어 있습니다.');
+        }
+        else {
+            req.session.user = {
+            email: email
+            }
+        }
+        
         console.log('아이디와 비밀번호가 일치합니다.')
         return done(null, user);
         
