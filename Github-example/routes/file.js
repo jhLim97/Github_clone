@@ -80,13 +80,6 @@ module.exports = function(router) {
                 res.end();
             }
         });
-
-        /*
-        res.writeHead(200, {"Content-Type":"text/html;charset=utf8"});
-        res.write("<h1>파일 업로드 성공</h1>");
-        res.write("<p>원본파일 : " + originalname + "</p>");
-        res.write("<p>저장파일 : " + filename + "</p>");
-        res.end();*/
     
     });
 }
